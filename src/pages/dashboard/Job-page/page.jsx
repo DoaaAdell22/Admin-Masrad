@@ -12,14 +12,14 @@ const page = () => {
     const [form] = Form.useForm();
     const idToken = useSelector(state => state.Auth.idToken);
     const onFinish = (values) => {
-      axios.post("https://masrad-backend.deplanagency.com/api/admin/update-job-page" , values ,
+      axios.post("https://backend.masrad.com.sa/api/admin/update-job-page" , values ,
         { headers : {
           Authorization:`Bearer ${idToken}`
           }}
       ).then(()=>{}).catch(()=>{})
     }
     useEffect(() => {
-        axios.get("https://masrad-backend.deplanagency.com/api/admin/show-job-page" , 
+        axios.get("https://backend.masrad.com.sa/api/admin/show-job-page" , 
             { headers : {
             Authorization:`Bearer ${idToken}`
             }}

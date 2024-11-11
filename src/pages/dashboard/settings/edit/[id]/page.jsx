@@ -21,7 +21,7 @@ const Page = () => {
     }
 
     useEffect(() => {
-        axios.get(`https://masrad-backend.deplanagency.com/api/admin/settings/${params.id}`,
+        axios.get(`https://backend.masrad.com.sa/api/admin/settings/${params.id}`,
             { headers: { Authorization: `Bearer ${idToken}` } }
         ).then((res) => {
             form.setFieldsValue ({
@@ -34,7 +34,7 @@ const Page = () => {
 
     const handler = (values) => {
         setLoading(true);
-        axios.put(`https://masrad-backend.deplanagency.com/api/admin/settings/${params.id}`, values,
+        axios.put(`https://backend.masrad.com.sa/api/admin/settings/${params.id}`, values,
             { headers: { Authorization: `Bearer ${idToken}` } }
         ).then(() => {
             message.success('successfully updated')
@@ -67,7 +67,8 @@ const Page = () => {
                 <Button className='px-8' type="primary" size='large' htmlType="submit">
                   <FormattedMessage id='edit' />
                 </Button>
-              </Form.Item>            </Form>
+              </Form.Item>   
+            </Form>
         </div>
     )
 }

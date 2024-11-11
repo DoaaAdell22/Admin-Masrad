@@ -54,7 +54,7 @@ const Page = () => {
     
 
     const request = () => {
-        axios.get("https://masrad-backend.deplanagency.com/api/admin/contacts?page" , 
+        axios.get("https://backend.masrad.com.sa/api/admin/contacts?page" , 
             { headers : {
             Authorization:`Bearer ${idToken}`
             }}

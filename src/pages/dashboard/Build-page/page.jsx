@@ -18,7 +18,7 @@ const Page = () => {
 
    
     const onFinish = (values) => {
-      axios.post("https://masrad-backend.deplanagency.com/api/admin/update-build-page" , values ,
+      axios.post("https://backend.masrad.com.sa/api/admin/update-build-page" , values ,
         { headers : {
           Authorization:`Bearer ${idToken}`
           }}
@@ -27,7 +27,7 @@ const Page = () => {
     
 
     const request = () => {
-        axios.get("https://masrad-backend.deplanagency.com/api/admin/show-build-page" , 
+        axios.get("https://backend.masrad.com.sa/api/admin/show-build-page" , 
             { headers : {
             Authorization:`Bearer ${idToken}`
             }}

@@ -44,7 +44,7 @@ const Page = () => {
     
 
     const request = () => {
-        axios.get("https://masrad-backend.deplanagency.com/api/admin/settings" , 
+        axios.get("https://backend.masrad.com.sa/api/admin/settings" , 
             { headers : {
             Authorization:`Bearer ${idToken}`
             }}
@@ -63,7 +63,7 @@ const Page = () => {
 
     // const deleteHandler = (id) =>{
     //     setClick(id)
-    //     axios.delete(`https://masrad-backend.deplanagency.com/api/admin/settings/${id}` , 
+    //     axios.delete(`https://backend.masrad.com.sa/api/admin/settings/${id}` , 
     //         { headers : {
     //             Authorization:`Bearer ${idToken}`
     //             }}

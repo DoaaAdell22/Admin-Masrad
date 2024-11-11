@@ -27,7 +27,7 @@ const Page = () => {
         formData.append("video", file); 
         formData.append("key", "about"); 
 
-        axios.post("https://masrad-backend.deplanagency.com/api/admin/upload-video", formData, {
+        axios.post("https://backend.masrad.com.sa/api/admin/upload-video", formData, {
             headers: {
                 Authorization: `Bearer ${idToken}`,
             }
@@ -37,7 +37,7 @@ const Page = () => {
     };
 
     useEffect(()=>{
-        axios.get("https://masrad-backend.deplanagency.com/api/admin/show-about-page" , 
+        axios.get("https://backend.masrad.com.sa/api/admin/show-about-page" , 
             { headers : {
             Authorization:`Bearer ${idToken}`
             }}

@@ -12,14 +12,14 @@ const page = () => {
     const [form] = Form.useForm();
     const idToken = useSelector(state => state.Auth.idToken);
     const onFinish = (values) => {
-      axios.post("https://masrad-backend.deplanagency.com/api/admin/update-about-page" , values ,
+      axios.post("https://backend.masrad.com.sa/api/admin/update-about-page" , values ,
         { headers : {
           Authorization:`Bearer ${idToken}`
           }}
       ).then(()=>{}).catch(()=>{})
     }
     useEffect(() => {
-        axios.get("https://masrad-backend.deplanagency.com/api/admin/show-about-page" , 
+        axios.get("https://backend.masrad.com.sa/api/admin/show-about-page" , 
             { headers : {
             Authorization:`Bearer ${idToken}`
             }}
@@ -154,6 +154,7 @@ const page = () => {
             >
             <Input.TextArea />
             </Form.Item>
+            
             <Divider >القسم 5</Divider>
             <Form.Item 
               label="العنوان"

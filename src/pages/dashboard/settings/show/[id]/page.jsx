@@ -17,7 +17,7 @@ const page = () => {
 
 
       useEffect(()=>{
-        axios.get(`https://masrad-backend.deplanagency.com/api/admin/settings/${params.id}` ,
+        axios.get(`https://backend.masrad.com.sa/api/admin/settings/${params.id}` ,
             
             { headers : {
                 Authorization:`Bearer ${idToken}`

@@ -5,7 +5,7 @@ import authAction from "store/auth/actions";
 const { setTokenAsExpired } = authAction;
 
 // import { store } from "../../redux/store";
-export const URL = "https://masrad-backend.deplanagency.com"; // ==> dev
+export const URL = "https://backend.masrad.com.sa"; // ==> dev
 
 const instance = axios.create({
   baseURL: `${URL}/api/admin`,
