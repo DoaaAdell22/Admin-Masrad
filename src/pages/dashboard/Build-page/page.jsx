@@ -22,7 +22,9 @@ const Page = () => {
         { headers : {
           Authorization:`Bearer ${idToken}`
           }}
-      ).then(()=>{}).catch(()=>{})
+      ).then((res)=>{
+        message.success(res.data.message)
+      }).catch(()=>{})
     }
     
 

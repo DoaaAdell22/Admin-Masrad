@@ -16,7 +16,7 @@ const page = () => {
         { headers : {
           Authorization:`Bearer ${idToken}`
           }}
-      ).then(()=>{}).catch(()=>{})
+      ).then((res)=>{message.success(res.data.message)}).catch(()=>{})
     }
     useEffect(() => {
         axios.get("https://backend.masrad.com.sa/api/admin/show-job-page" , 

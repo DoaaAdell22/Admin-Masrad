@@ -32,6 +32,8 @@ const Page = () => {
                 Authorization: `Bearer ${idToken}`,
             }
         }).then((res) => {
+            message.success('successfully updated')
+
         }).catch(() => {
         });
     };
