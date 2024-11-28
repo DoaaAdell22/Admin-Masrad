@@ -27,18 +27,18 @@ export function PrivatePages(Comp: any, next: any) {
   if (!idToken) {
    return ()=><Navigate to={to} replace />
   }
-  if (!profile.isVerified) {
+  if (!profile?.isVerified) {
     return  next(()=><Comp><IsVirified/> </Comp>)
   } 
   
-  if (!profile.isActivated) {
+  if (!profile?.isActivated) {
     return  next(()=><Comp><ExpireHandling title={"Account not active"} msg={<>
       <p>We're sorry, but your account not active yet.</p>
        <p>Please log in later. Thank you for your understanding.</p>
    </>}/> </Comp>)
   }
 
-  if (!profile.isApproved) {
+  if (!profile?.isApproved) {
     return  next(()=><Comp><ExpireHandling title={"Account not approved"} msg={<>
       <p>We're sorry, but your account not approved yet.</p>
        <p>Please log in later. Thank you for your understanding.</p>

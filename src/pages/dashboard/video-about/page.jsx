@@ -64,14 +64,20 @@ const Page = () => {
                     </Upload>
 
                 </Form.Item>
+                <Button  className='my-4' type="primary" htmlType="submit"><FormattedMessage id='upload' /></Button>
+               <div
+                className="w-full h-[300px]"
+               
+               >
                 {url && <Player
+
                     playsInline
                     src={url}
                     fluid={false}
-                    width={300}
+                    width={"100%"}
                     height={300}
                 />}
-                <Button  className='mt-8' type="primary" htmlType="submit"><FormattedMessage id='upload' /></Button>
+               </div>
             </Form>
         </div>
     );

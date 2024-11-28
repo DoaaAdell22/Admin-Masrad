@@ -88,7 +88,7 @@ const page = () => {
             {fields.map(({ key, name, ...restField } , index) => (
               <div key={key} style={{ display: 'flex',gap:10, marginBottom: 8,width:"100%" }} align="baseline">
               <div className='flex flex-col w-[calc(100%_-_50px)]'> 
-              <Form.Item
+              {/* <Form.Item
                 hidden
                 initialValue={`slug-${index}`}
                   {...restField}
@@ -97,7 +97,7 @@ const page = () => {
                 >
                   <Input 
                     />
-                </Form.Item>               
+                </Form.Item>                */}
               <Form.Item
                   {...restField}
                   name={[name, 'text']}

@@ -113,16 +113,7 @@ const Page = () => {
             {fields.map(({ key, name, ...restField } , index) => (
               <div key={key} style={{ display: 'flex',gap:10, marginBottom: 8,width:"100%" }} align="baseline">
             <div className='flex flex-col w-[calc(100%_-_50px)]'>
-            <Form.Item
-                hidden
-                initialValue={`slug-${index}`}
-                  {...restField}
-                  name={[name, 'slug']}
-                  rules={[{ required: true }]}
-                >
-                  <Input 
-                    />
-                </Form.Item>
+  
             <Form.Item
                 {...restField}
                 name={[name, 'title']}
@@ -181,6 +172,7 @@ const Page = () => {
         >
         <Input.TextArea  />
         </Form.Item>
+ 
         <Divider >القسم 5</Divider>
         <Form.Item 
           label="العنوان"
@@ -212,34 +204,39 @@ const Page = () => {
 
 export default Page;
 
+// <h3 className='mb-3'>عناصر القسم</h3>
+// <Form.List  name="nums_sec4">
+// {(fields, { add, remove }) => (
+//   <Fragment>
+//     {fields.map(({ key, name, ...restField } , index) => (
+//       <div key={key} style={{ display: 'flex',gap:10, marginBottom: 8,width:"100%" }} align="baseline">
+//     <div className='flex flex-col w-[calc(100%_-_50px)]'>
 
+//     <Form.Item
+//         {...restField}
+//         name={[name, 'nums']}
+//         rules={[{ required: true }]}
+//       >
+//         <Input  />
+//       </Form.Item>
+//       <Form.Item
+//         {...restField}
+//         name={[name, 'text']}
+//         rules={[{ required: true}]}
+//       >
+//       <Input.TextArea  />
+//       </Form.Item>
+//      <Divider />
 
-
-        //     <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center items-center
-        // gap-5 sm:text-end text-center items-stretch'>
-        //     {section2.map((el) => (
-        //         <div key={el.id} className="p-5 flex flex-col gap-5 sm:items-end items-center rounded-2xl shadow-custom-lg bg-white">
-        //             <div className="bg-[rgba(250,229,212,0.2)] w-16 h-16 rounded-xl flex justify-center items-center">
-        //                 <img className="w-10 h-10" src={icons(el.slug)} alt="" />
-        //             </div>
-        //             <h3 className="text-[#0C5685] text-[19px]">{el.title}</h3>
-        //             <p className="text-[#7B7B7B] text-[15px]">{el.desc}</p>
-        //         </div>
-        //     ))}  
-                    
-        //     </div>
-
-        //     <img src={home.video_sec4} />
-        //     <div className="grid xl:grid-cols-4   md:grid-cols-2 grid-cols-1 gap-6 justify-center sm:text-end 
-        // items-center my-5 ">
-        // {statis.map((el, index) => {
-        //     return (
-        //       <div key={index} className="flex flex-col gap-4 justify-center md:items-end items-center">
-        //         <span className="text-[#D08A40] lg:text-[48px] text-[28px] font-medium">{el.nums}</span>
-        //         <p className="text-[#0C5685] text-[19px] font-bold">{el.text}</p>
-        //         <div className="w-[260px] h-[1px] bg-[#FCD275]"></div>
-        //       </div>
-        //     );
-        //   })}
-        //     </div>
-        //     <Divider >القسم 5</Divider>
+//     </div>
+//         <MinusCircleOutlined onClick={() => remove(name)} />
+//         </div>
+//     ))}
+//     <Form.Item>
+//       <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />}>
+//         اضافة
+//       </Button>
+//     </Form.Item>
+//   </Fragment>
+// )}
+// </Form.List>
