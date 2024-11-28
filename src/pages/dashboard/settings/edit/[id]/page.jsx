@@ -56,7 +56,7 @@ const Page = () => {
                 <Form.Item
                     label={<FormattedMessage id='type' />} name={"key"}
                     rules={[{ required: true, message: 'please Enter key' }]}>
-                    <Input size='large' placeholder='please Enter key' />
+                    <Input size='large' disabled placeholder='please Enter key' />
                 </Form.Item>
                 <Form.Item
                     label={<FormattedMessage id='value' />} name={"value"}
