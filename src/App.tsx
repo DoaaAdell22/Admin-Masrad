@@ -1,5 +1,6 @@
 import MainProvider from "./providers";
 import logger from "loggers";
+import 'video-react/dist/video-react.css'; // import css
 
 
 
