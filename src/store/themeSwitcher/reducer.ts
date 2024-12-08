@@ -1,10 +1,11 @@
 import actions from './actions';
 import { isCurrentThemeDark } from './config';
 
-const defaultTheme = 'dark'; 
+const defaultTheme = 'dark';
+
 const initState = {
   themeName: defaultTheme,
-  isDark: isCurrentThemeDark(defaultTheme) 
+  isDark: isCurrentThemeDark(defaultTheme)
 };
 
 export default function ThemesSwitcher(state = initState, action) {
