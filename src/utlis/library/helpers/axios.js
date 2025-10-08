@@ -5,7 +5,7 @@ import authAction from "store/auth/actions";
 const { setTokenAsExpired } = authAction;
 
 // import { store } from "../../redux/store";
-export const URL = "https://backend.masrad.com.sa"; // ==> dev
+export const URL = "https://backend.masrad.sa"; // ==> dev
 
 const instance = axios.create({
   baseURL: `${URL}/api/admin`,
@@ -25,7 +25,7 @@ instance.interceptors.response.use(
   },
 
   (err) => {
-    console.log(err.response.config)
+    console.log(err.response.config);
     if (
       err &&
       err.response &&
@@ -38,13 +38,12 @@ instance.interceptors.response.use(
       err.response.status === 401 &&
       err.response.config.url !== "login"
     ) {
-      if(store.getState().Auth.status!=="EXPIRED"){
-
-        store.dispatch(setTokenAsExpired())
+      if (store.getState().Auth.status !== "EXPIRED") {
+        store.dispatch(setTokenAsExpired());
       }
       // window.localStorage.removeItem("mitcvAdminToken");
       // window.location.replace("/");
-    } 
+    }
     return Promise.reject(err);
   }
 );

@@ -102,7 +102,7 @@ function Login() {
       <div className="box-border absolute inset-x-0 top-0 w-full flex items-center justify-between container mx-auto py-5 px-2">
         <div className="brightness-90 flex items-center text-[#3730a3] no-underline hover:no-underline font-bold text-2xl lg:text-4xl">
           <Link to={'/'} >
-          <img
+          <img 
       className="w-20 h-auto"
       src="/logo-masrad.png"
       width={48}
