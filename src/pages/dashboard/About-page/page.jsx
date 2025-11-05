@@ -180,6 +180,63 @@ const page = () => {
           >
             <Input.TextArea />
           </Form.Item>
+          <Form.List name="about_desc3">
+            {(fields, { add, remove }) => (
+              <Fragment>
+                {fields.map(({ key, name, ...restField }, index) => (
+                  <div
+                    key={key}
+                    style={{
+                      display: "flex",
+                      gap: 10,
+                      marginBottom: 8,
+                      width: "100%",
+                    }}
+                    align="baseline"
+                  >
+                    <div className="flex flex-col w-[calc(100%_-_50px)]">
+                      {/* <Form.Item
+                hidden
+                initialValue={`slug-${index}`}
+                  {...restField}
+                  name={[name, 'slug']}
+                  rules={[{ required: true }]}
+                >
+                  <Input 
+                    />
+                </Form.Item>                */}
+                      <Form.Item
+                        {...restField}
+                        name={[name, "title"]}
+                        rules={[{ required: true }]}
+                      >
+                        <Input />
+                      </Form.Item>
+                      <Form.Item
+                        {...restField}
+                        name={[name, "text"]}
+                        rules={[{ required: true }]}
+                      >
+                        <Input />
+                      </Form.Item>
+                      <Divider />
+                    </div>
+                    <MinusCircleOutlined onClick={() => remove(name)} />
+                  </div>
+                ))}
+                <Form.Item>
+                  <Button
+                    type="dashed"
+                    onClick={() => add()}
+                    block
+                    icon={<PlusOutlined />}
+                  >
+                    اضافة
+                  </Button>
+                </Form.Item>
+              </Fragment>
+            )}
+          </Form.List>
           <Divider>القسم 4</Divider>
           <Form.Item
             label=" العنوان الرئيسي"
