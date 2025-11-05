@@ -81,6 +81,13 @@ const Page = () => {
         >
           <Divider>القسم 1</Divider>
           <Form.Item
+            label=" العنوان الرئيسي"
+            name="main_title_sec_1"
+            rules={[{ required: true, message: "This field is required" }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
             label="العنوان"
             name="title_sec1"
             rules={[{ required: true, message: "This field is required" }]}
@@ -95,6 +102,13 @@ const Page = () => {
             <Input.TextArea />
           </Form.Item>
           <Divider>القسم 2</Divider>
+          <Form.Item
+            label=" العنوان الرئيسي"
+            name="main_title_sec_2"
+            rules={[{ required: true, message: "This field is required" }]}
+          >
+            <Input />
+          </Form.Item>
           <Form.Item
             label="العنوان"
             name="title_sec2"
@@ -159,6 +173,13 @@ const Page = () => {
           </Form.List>
           <Divider>القسم 3</Divider>
           <Form.Item
+            label=" العنوان الرئيسي"
+            name="main_title_sec_3"
+            rules={[{ required: true, message: "This field is required" }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
             label="العنوان"
             name="title_sec3"
             rules={[{ required: true, message: "This field is required" }]}
@@ -173,6 +194,13 @@ const Page = () => {
             <Input.TextArea />
           </Form.Item>
           <Divider>القسم 4</Divider>
+          <Form.Item
+            label=" العنوان الرئيسي"
+            name="main_title_sec_4"
+            rules={[{ required: true, message: "This field is required" }]}
+          >
+            <Input />
+          </Form.Item>
           <Form.Item
             label="العنوان"
             name="title_sec4"
@@ -189,6 +217,13 @@ const Page = () => {
           </Form.Item>
 
           <Divider>القسم 5</Divider>
+          <Form.Item
+            label=" العنوان الرئيسي"
+            name="main_title_sec_5"
+            rules={[{ required: true, message: "This field is required" }]}
+          >
+            <Input />
+          </Form.Item>
           <Form.Item
             label="العنوان"
             name="title_sec5"
