@@ -55,9 +55,15 @@ function Topbar({
     >
       <div className="isoLeft flex items-center gap-4">
         <Button
-          className="text-base w-9 h-9"
           type="text"
-          icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+          size="large"
+          icon={
+            collapsed ? (
+              <MenuUnfoldOutlined className="!text-2xl" />
+            ) : (
+              <MenuFoldOutlined className="!text-2xl" />
+            )
+          }
           onClick={() => setCollapsed(!collapsed)}
         />
         {/* <Breadcrumb className="text-sm" items={breadcrumbItems} /> */}

@@ -151,7 +151,7 @@ function DashboardLayout({ children }: { children?: any }) {
             className="mb-4 max-w-fit"> */}
 
               <Breadcrumb
-                className="text-xl mb-2"
+                className="text-xl mb-2 font-bold"
                 items={[breadcrumbItems[breadcrumbItems.length - 1]]}
               />
               <Divider className="mb-6" />
