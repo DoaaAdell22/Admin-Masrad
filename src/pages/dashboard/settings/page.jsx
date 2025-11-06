@@ -47,6 +47,7 @@ const Page = () => {
   ];
 
   const request = () => {
+    setLoading(true);
     axios
       .get("https://backend.masrad.sa/api/admin/settings", {
         headers: {
@@ -58,6 +59,9 @@ const Page = () => {
       })
       .catch((err) => {
         message.err(`Failed to save data`);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 

@@ -65,12 +65,9 @@ function Topbar({
       <ul className="flex gap-1 items-center">
         <li className="isoUser">
           {" "}
-          {/* <ThemesSwitcher />{" "} */}
+          <ThemesSwitcher />{" "}
         </li>
-        <li className="isoUser">
-          {" "}
-          {/* <LangSwitcher />{" "} */}
-        </li>
+        <li className="isoUser"> {/* <LangSwitcher />{" "} */}</li>
         <li className="isoUser">
           {" "}
           <TopbarUser />{" "}

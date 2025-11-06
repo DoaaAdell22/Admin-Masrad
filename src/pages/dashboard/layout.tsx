@@ -32,25 +32,20 @@ const { fetchProfileDataSuccess } = profileActions;
 function DashboardLayout({ children }: { children?: any }) {
   const navigation = useNavigation();
 
+  useEffect(() => {
+    if (navigation.state === "loading") {
+      NProgress.start();
+    } else {
+      NProgress.done();
+    }
 
-
-
-
-useEffect(() => {
-  if(navigation.state==="loading"){
-
-    NProgress.start();
-  }else{
-        NProgress.done();
-  }
-
-  // return () => {
-  // };
-},[navigation.state])
+    // return () => {
+    // };
+  }, [navigation.state]);
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
   const dispatch = useDispatch();
-  const {dir} = useSelector(
+  const { dir } = useSelector(
     ({ LanguageSwitcher }: { LanguageSwitcher: ILanguageSwitcher }) =>
       LanguageSwitcher.language
   );
@@ -59,8 +54,12 @@ useEffect(() => {
   const profile = useSelector(({ profile }) => profile.data);
 
   useEffect(() => {
-    if(profile?.id&& profile.isVerified&&profile.isActivated && profile.isApproved){
-
+    if (
+      profile?.id &&
+      profile.isVerified &&
+      profile.isActivated &&
+      profile.isApproved
+    ) {
       axios["get"](`Operations/info`, {
         headers: {
           "X-Portal": "dashboard",
@@ -69,15 +68,16 @@ useEffect(() => {
       })
         .then((response) => {
           const { data } = response.data;
-          data.isVerified=true
-          if(data.approvalStatus==="Approved"){
-          data.isApproved=true
-          }if(data.userActivated){
-            data.isActivated=true
+          data.isVerified = true;
+          if (data.approvalStatus === "Approved") {
+            data.isApproved = true;
           }
-        //  let permissions=data.roles.reduce((acc , curr)=> [...acc , ...curr.permissions] ,[])
-        //  permissions = permissionsTransform(permissions);
-        //  data.permissions=permissions
+          if (data.userActivated) {
+            data.isActivated = true;
+          }
+          //  let permissions=data.roles.reduce((acc , curr)=> [...acc , ...curr.permissions] ,[])
+          //  permissions = permissionsTransform(permissions);
+          //  data.permissions=permissions
           dispatch(fetchProfileDataSuccess(data));
         })
         .catch((error) => {});
@@ -111,32 +111,35 @@ useEffect(() => {
       key: "home",
     },
   ].concat(extraBreadcrumbItems);
-  const swipeHandlers = useSwiper({ onSwipedLeft(){
-    setCollapsed( dir === "ltr" ?false:true)
-  },
-  onSwipedRight(){ 
-    setCollapsed( dir === "ltr" ?true:false)
-  } });
-  return (<>
-    <div  className="flex h-[100dvh]">
-  
-<Sider collapsed={collapsed} setCollapsed={setCollapsed} />
+  const swipeHandlers = useSwiper({
+    onSwipedLeft() {
+      setCollapsed(dir === "ltr" ? false : true);
+    },
+    onSwipedRight() {
+      setCollapsed(dir === "ltr" ? true : false);
+    },
+  });
+  return (
+    <>
+      <div className="flex h-[100dvh]">
+        <Sider collapsed={collapsed} setCollapsed={setCollapsed} />
 
+        <ScrollerRenderView
+          className={`!h-[calc(100dvh)] `}
+          autoHide
+          autoHideTimeout={1000}
+          autoHideDuration={200}
+        >
+          <Topbar collapsed={collapsed} setCollapsed={setCollapsed} />
 
-
-      <ScrollerRenderView
-        className={`!h-[calc(100dvh)] `}
-        autoHide
-        autoHideTimeout={1000}
-        autoHideDuration={200}
-      >
-            <Topbar collapsed={collapsed} setCollapsed={setCollapsed} />
-
-        <Content {...swipeHandlers}  style={{ margin: "24px 16px 0", overflow: "initial" }}>
-          <div
-            className={`py-4 box-border min-h-[calc(100dvh_-_24px_-_45px_-_80px)]`}
+          <Content
+            {...swipeHandlers}
+            style={{ margin: "24px 16px 0", overflow: "initial" }}
           >
-            {/* <motion.div
+            <div
+              className={`py-4 box-border min-h-[calc(100dvh_-_24px_-_45px_-_80px)]`}
+            >
+              {/* <motion.div
             key={breadcrumbItems.at(-1).key}
             initial={{
               x:"100vw"
@@ -147,22 +150,22 @@ useEffect(() => {
             transition={{delay:.5}}
             className="mb-4 max-w-fit"> */}
 
-            {/* <Breadcrumb  className="text-sm mb-2" items={breadcrumbItems} /> */}
-            {/* </motion.div> */}
+              {/* <Breadcrumb  className="text-sm mb-2" items={breadcrumbItems} /> */}
+              {/* </motion.div> */}
 
-            <TranslateLayoutAnimation>
-              {children}
-              {/* <RollerLoading /> */}
-            </TranslateLayoutAnimation>
-          </div>
-        </Content>
+              <TranslateLayoutAnimation>
+                {children}
+                {/* <RollerLoading /> */}
+              </TranslateLayoutAnimation>
+            </div>
+          </Content>
 
-        <Footer />
-      </ScrollerRenderView>
-      {/* </Layout> */}
-      {/* </Layout> */}
-    </div>
-  </>
+          <Footer />
+        </ScrollerRenderView>
+        {/* </Layout> */}
+        {/* </Layout> */}
+      </div>
+    </>
   );
 }
 

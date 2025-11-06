@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AnimateSharedLayout, Variants, motion } from "framer-motion";
 import HomeLayoutAnimation from "components/AnimationLayout/home-layout-animation";
-import QueueAnim from 'rc-queue-anim';
+import QueueAnim from "rc-queue-anim";
 
 const { SubMenu } = Menu;
 interface MenuItem {
@@ -17,9 +17,8 @@ interface MenuItem {
   disabled?: boolean;
   children?: MenuItem[];
 }
-   
 
-const MyMenu = ({collapsed}) => {
+const MyMenu = ({ collapsed }) => {
   const location = useLocation();
   const profile = useSelector(({ profile }) => profile.data);
 
@@ -55,7 +54,7 @@ const MyMenu = ({collapsed}) => {
     return (
       <Menu.Item
         // className={`!flex`}
-        
+
         key={key}
         icon={
           <div className=" icon-wraper -ms-4 h-full px-3 leading-normal align-baseline inline-flex">
@@ -76,23 +75,21 @@ const MyMenu = ({collapsed}) => {
     );
   };
 
-
   return (
-<motion.div 
-key={collapsed}
+    <motion.div
+      key={collapsed}
       initial={{ y: 30, opacity: 0 }}
       animate={{
         y: 0,
         opacity: 1,
       }}
-     
       transition={{
-        delay:  0.3 ,
-        duration:  0.3,
+        delay: 0.3,
+        duration: 0.3,
       }}
->
-<style>{`.sider-antd-sub-menu.ant-menu-submenu-inline ul.ant-menu-inline{border-radius:12px;}`}</style>
-    <Menu
+    >
+      <style>{`.sider-antd-sub-menu.ant-menu-submenu-inline ul.ant-menu-inline{border-radius:12px;}`}</style>
+      <Menu
         className="h-full bg-transparent !border-none"
         // theme="light"
         // mode="vertical"
@@ -100,14 +97,11 @@ key={collapsed}
         selectedKeys={[location.pathname.substring(11)]}
         defaultSelectedKeys={[location.pathname.substring(11)]}
       >
- 
         {getMenuItems(profile).map((item, index) =>
           renderMenuItem(item, index)
         )}
-   
-
       </Menu>
-</motion.div>
+    </motion.div>
   );
 };
 
