@@ -77,9 +77,9 @@ const Page = () => {
 
   return (
     <div>
-      <h1 className="text-3xl text-white font-bold text-center">
+      {/* <h1 className="text-3xl text-white font-bold text-center">
         <FormattedMessage id="home" />
-      </h1>
+      </h1> */}
       <Spin spinning={loading}>
         <div className="flex flex-col items-center justify-center max-w-5xl mx-auto  text-center">
           <Form
@@ -92,7 +92,7 @@ const Page = () => {
             onFinish={onFinish}
             autoComplete="off"
           >
-            <Divider  orientation="left">القسم الأول</Divider>
+            <Divider orientation="left">القسم الأول</Divider>
             <section className="mb-16 border p-8 rounded-lg bg-white dark:bg-neutral-800 shadow-[0_0_4px_1px_rgba(0,0,0,0.1)] ">
               <Form.Item
                 label=" العنوان الرئيسي"

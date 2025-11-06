@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Breadcrumb, Layout, theme } from "antd";
+import { Breadcrumb, Divider, Layout, theme } from "antd";
 import Footer from "containers/layout/Footer";
 import Sidebar from "containers/layout/Sidebar";
 import Topbar from "containers/layout/Topbar";
@@ -150,7 +150,11 @@ function DashboardLayout({ children }: { children?: any }) {
             transition={{delay:.5}}
             className="mb-4 max-w-fit"> */}
 
-              {/* <Breadcrumb  className="text-sm mb-2" items={breadcrumbItems} /> */}
+              <Breadcrumb
+                className="text-xl mb-2"
+                items={[breadcrumbItems[breadcrumbItems.length - 1]]}
+              />
+              <Divider className="mb-6" />
               {/* </motion.div> */}
 
               <TranslateLayoutAnimation>

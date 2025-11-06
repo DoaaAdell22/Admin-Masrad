@@ -53,9 +53,9 @@ const page = () => {
 
   return (
     <div>
-      <h1 className="text-3xl text-white font-bold text-center">
+      {/* <h1 className="text-3xl text-white font-bold text-center">
         <FormattedMessage id="about" />
-      </h1>
+      </h1> */}
       <Spin spinning={loading}>
         <div className="flex flex-col items-end justify-center  text-center max-w-5xl mx-auto">
           <Form

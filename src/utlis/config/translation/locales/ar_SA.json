@@ -399,7 +399,12 @@
   "banner-image": "صورة الملصق",
   "hide": "اخفاء",
   "yes": "نعم",
-  "no": "لا",
+  "char-page": "صفة مسرد",
+  "build-page": "بناء مسرد",
+  "job-page": "وظائف مسرد",
+  "about-page": "اعرف اكثر",
+  "video-about": "فيديو اعرف اكثر",
+  "video-main": "الفيديو الرئيسي",
   "are-you-sure": "هل أنت متأكد؟",
   "contacts": "التواصل",
   "masrad-jobs": "وظائف مسرد",
@@ -410,6 +415,5 @@
   "messages": "رسالة",
   "value": "قيمة",
   "video-home": "",
-  "video-home-0": "فيديو الرئيسية",
-  "video-about": "فيديو اعرف اكثر"
+  "video-home-0": "فيديو الرئيسية"
 }
