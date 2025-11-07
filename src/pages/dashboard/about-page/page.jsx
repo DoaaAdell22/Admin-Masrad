@@ -18,6 +18,7 @@ const page = () => {
       .post("https://backend.masrad.sa/api/admin/update-about-page", values, {
         headers: {
           Authorization: `Bearer ${idToken}`,
+          
         },
       })
       .then((res) => {

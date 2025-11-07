@@ -55,25 +55,25 @@ const Page = () => {
       render: (text) => <div style={{ maxWidth: "300px" }}>{text}</div>,
     },
 
-    // {
-    //   title: <FormattedMessage id="actions" />,
-    //   dataIndex: "action",
-    //   key: "action",
-    //   render: (text, record) => (
-    //     <div className="flex justify-center gap-2">
-    //       <Popconfirm
-    //         title={<FormattedMessage id="are-you-sure" />}
-    //         onConfirm={() => handleClick(record.id)}
-    //         okText={<FormattedMessage id="yes" />}
-    //         cancelText={<FormattedMessage id="no" />}
-    //       >
-    //         <Button loading={deletedItem === record.id} type="primary" danger>
-    //           <FormattedMessage id="delete" />
-    //         </Button>
-    //       </Popconfirm>
-    //     </div>
-    //   ),
-    // },
+    {
+      title: <FormattedMessage id="actions" />,
+      dataIndex: "action",
+      key: "action",
+      render: (text, record) => (
+        <div className="flex justify-center gap-2">
+          <Popconfirm
+            title={<FormattedMessage id="are-you-sure" />}
+            onConfirm={() => handleClick(record.id)}
+            okText={<FormattedMessage id="yes" />}
+            cancelText={<FormattedMessage id="no" />}
+          >
+            <Button loading={deletedItem === record.id} type="primary" danger>
+              <FormattedMessage id="delete" />
+            </Button>
+          </Popconfirm>
+        </div>
+      ),
+    },
   ];
 
   const request = () => {

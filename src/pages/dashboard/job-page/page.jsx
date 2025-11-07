@@ -102,13 +102,13 @@ const page = () => {
               >
                 <Input size="large" />
               </Form.Item>
-              {/* <Form.Item
-            label="العنوان"
-            name="title_sec2"
-            rules={[{ required: true, message: "This field is required" }]}
-            >
-            <Input size="large" />
-            </Form.Item> */}
+              <Form.Item
+                label="العنوان"
+                name="title_sec2"
+                rules={[{ required: true, message: "This field is required" }]}
+              >
+                <Input size="large" />
+              </Form.Item>
               <h3 className="mb-3">عناصر القسم</h3>
 
               <Form.List name="job_des2">
