@@ -18,7 +18,6 @@ const page = () => {
       .post("https://backend.masrad.sa/api/admin/update-about-page", values, {
         headers: {
           Authorization: `Bearer ${idToken}`,
-          
         },
       })
       .then((res) => {
@@ -58,7 +57,7 @@ const page = () => {
         <FormattedMessage id="about" />
       </h1> */}
       <Spin spinning={loading}>
-        <div className="flex flex-col items-end justify-center  text-center max-w-5xl mx-auto">
+        <div className="flex flex-col items-end justify-center max-w-5xl mx-auto">
           <Form
             name="basic"
             size="large"
@@ -69,7 +68,7 @@ const page = () => {
             onFinish={onFinish}
             autoComplete="off"
           >
-            <Divider orientation="left">القسم الأول</Divider>
+            <h1 className="text-lg font-bold mb-6">القسم الأول</h1>
             <section className="mb-16 border p-8 rounded-lg bg-white dark:bg-neutral-800 shadow-[0_0_4px_1px_rgba(0,0,0,0.1)] ">
               <Form.Item
                 label=" العنوان الرئيسي"
@@ -94,7 +93,7 @@ const page = () => {
               </Form.Item>
             </section>
 
-            <Divider orientation="left">القسم الثاني</Divider>
+            <h1 className="text-lg font-bold mb-6">القسم الثاني</h1>
             <section className="mb-16 border p-8 rounded-lg bg-white dark:bg-neutral-800 shadow-[0_0_4px_1px_rgba(0,0,0,0.1)] ">
               <Form.Item
                 label=" العنوان الرئيسي"
@@ -178,7 +177,7 @@ const page = () => {
               </Form.List>
             </section>
 
-            <Divider orientation="left">القسم الثالث</Divider>
+            <h1 className="text-lg font-bold mb-6">القسم الثالث</h1>
             <section className="mb-16 border p-8 rounded-lg bg-white dark:bg-neutral-800 shadow-[0_0_4px_1px_rgba(0,0,0,0.1)] ">
               <Form.Item
                 label=" العنوان الرئيسي"
@@ -261,7 +260,7 @@ const page = () => {
               </Form.List>
             </section>
 
-            <Divider orientation="left">القسم الرابع</Divider>
+            <h1 className="text-lg font-bold mb-6">القسم الرابع</h1>
             <section className="mb-16 border p-8 rounded-lg bg-white dark:bg-neutral-800 shadow-[0_0_4px_1px_rgba(0,0,0,0.1)] ">
               <Form.Item
                 label=" العنوان الرئيسي"
@@ -286,7 +285,7 @@ const page = () => {
               </Form.Item>
             </section>
 
-            <Divider orientation="left">القسم الخامس</Divider>
+            <h1 className="text-lg font-bold mb-6">القسم الخامس</h1>
             <section className="mb-16 border p-8 rounded-lg bg-white dark:bg-neutral-800 shadow-[0_0_4px_1px_rgba(0,0,0,0.1)] ">
               <Form.Item
                 label=" العنوان الرئيسي"
@@ -310,7 +309,7 @@ const page = () => {
                 <Input.TextArea rows={6} size="large" />
               </Form.Item>
             </section>
-            <Divider orientation="left">القسم السادس</Divider>
+            <h1 className="text-lg font-bold mb-6">القسم السادس</h1>
             <section className="mb-16 border p-8 rounded-lg bg-white dark:bg-neutral-800 shadow-[0_0_4px_1px_rgba(0,0,0,0.1)] ">
               <Form.Item
                 label=" العنوان الرئيسي"
@@ -334,7 +333,7 @@ const page = () => {
                 <Input.TextArea rows={6} size="large" />
               </Form.Item>
             </section>
-            <Divider orientation="left">القسم السابع</Divider>
+            <h1 className="text-lg font-bold mb-6">القسم السابع</h1>
             <section className="mb-16 border p-8 rounded-lg bg-white dark:bg-neutral-800 shadow-[0_0_4px_1px_rgba(0,0,0,0.1)] ">
               <Form.Item
                 label=" العنوان الرئيسي"

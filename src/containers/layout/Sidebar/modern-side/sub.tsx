@@ -30,7 +30,7 @@ function SubSide({
       <div className="flex items-center justify-center flex-shrink-0 py-8">
         <Link to={"/"} target="_blank">
           <img
-            className="w-14 h-auto"
+            className="w-[90px] h-auto"
             src={isDark ? "/logo-masrad.png" : "/Frame.png"}
             width={152}
             height={39}

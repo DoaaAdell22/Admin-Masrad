@@ -68,7 +68,7 @@ const Page = () => {
         <FormattedMessage id="build" />
       </h1> */}
       <Spin spinning={loading}>
-        <div className="flex flex-col items-center justify-center max-w-5xl mx-auto text-center">
+        <div className="flex flex-col items-center justify-center max-w-5xl mx-auto">
           <Form
             name="basic"
             form={form}
@@ -78,7 +78,7 @@ const Page = () => {
             onFinish={onFinish}
             autoComplete="off"
           >
-            <Divider orientation="left">القسم الأول</Divider>
+            <h1 className="text-lg font-bold mb-6">القسم الأول</h1>
             <section className="mb-16 border p-8 rounded-lg bg-white dark:bg-neutral-800 shadow-[0_0_4px_1px_rgba(0,0,0,0.1)] ">
               <Form.Item
                 label=" العنوان الرئيسي"
@@ -102,7 +102,7 @@ const Page = () => {
                 <Input.TextArea rows={6} size="large" />
               </Form.Item>
             </section>
-            <Divider orientation="left">القسم الثاني</Divider>
+            <h1 className="text-lg font-bold mb-6">القسم الثاني</h1>
             <section className="mb-16 border p-8 rounded-lg bg-white dark:bg-neutral-800 shadow-[0_0_4px_1px_rgba(0,0,0,0.1)] ">
               <Form.Item
                 label=" العنوان الرئيسي"
@@ -186,7 +186,7 @@ const Page = () => {
                 )}
               </Form.List>
             </section>
-            <Divider orientation="left">القسم الثالث</Divider>
+            <h1 className="text-lg font-bold mb-6">القسم الثالث</h1>
             <section className="mb-16 border p-8 rounded-lg bg-white dark:bg-neutral-800 shadow-[0_0_4px_1px_rgba(0,0,0,0.1)] ">
               <Form.Item
                 label=" العنوان الرئيسي"

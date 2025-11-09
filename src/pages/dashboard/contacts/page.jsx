@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Popconfirm, Table } from "antd";
+import React, { useDeferredValue, useEffect, useState } from "react";
+import { Popconfirm, Table, Input } from "antd";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { message, Button } from "antd";
@@ -12,6 +12,8 @@ const Page = () => {
   const [add, setAdd] = useState([]);
   const idToken = useSelector((state) => state.Auth.idToken);
   const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState("");
+  const deferredSearch = useDeferredValue(search);
   const [deletedItem, setDeletedItem] = useState(null);
   const language = useSelector((state) => state.LanguageSwitcher.language);
 
@@ -77,9 +79,14 @@ const Page = () => {
   ];
 
   const request = () => {
+    const params = {};
+    if (deferredSearch) {
+      params.search = deferredSearch;
+    }
     setLoading(true);
     axios
       .get("https://backend.masrad.sa/api/admin/contacts?page", {
+        params,
         headers: {
           Authorization: `Bearer ${idToken}`,
         },
@@ -95,10 +102,19 @@ const Page = () => {
 
   useEffect(() => {
     request();
-  }, []);
+  }, [deferredSearch]);
 
   return (
     <div className="">
+      <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+        <Input
+          placeholder="بحث"
+          type="search"
+          size="large"
+          onChange={(e) => setSearch(e.target.value)}
+          alt="search"
+        />
+      </div>
       <Table loading={loading} columns={columns} dataSource={add} />
     </div>
   );
