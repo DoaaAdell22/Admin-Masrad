@@ -70,7 +70,7 @@ function Login() {
       // queryClient.invalidateQueries({ queryKey: ['todos'] })
     },
     onError:(err)=>{
-// const {status , data:{message}} =(err as any).response;
+const {status , data} =(err as any).response;
 // console.log(err);
 
 // dispatch(login('token'));
@@ -83,10 +83,7 @@ function Login() {
 
 
 
-// toast.error(message, {
-//   position: "top-center",
-//   duration: 5000,
-//   } );
+message.error(data.message );
  
 
     }
