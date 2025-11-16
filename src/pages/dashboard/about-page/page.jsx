@@ -1,5 +1,5 @@
 import axios from "axios";
-import { message, Spin } from "antd";
+import { message, Spin, Tag } from "antd";
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Divider } from "antd";
@@ -146,16 +146,20 @@ const page = () => {
                           <Form.Item
                             {...restField}
                             name={[name, "text"]}
-                            rules={[{ required: true }]}
+                            rules={[{ required: true , message: "رجاء قم بادخال النص" }]}
                           >
-                            <Input size="large" />
+                            <Input placeholder="رجاء قم بادخال النص" size="large" />
                           </Form.Item>
                           <Form.Item
                             {...restField}
                             name={[name, "nums"]}
-                            rules={[{ required: true }]}
+                            rules={[{ required: true , message:" رجاء قم بادخال الرقم" , 
+
+                            },
+                            {  pattern: /^[0-9]+$/, message: 'الرجاء ادخال رقم صحيح'}
+                            ]}
                           >
-                            <Input size="large" />
+                            <Input placeholder="رجاء قم بادخال الرقم" size="large" />
                           </Form.Item>
                           <Divider />
                         </div>
@@ -200,8 +204,19 @@ const page = () => {
               >
                 <Input.TextArea rows={6} size="large" />
               </Form.Item>
-              <Form.List name="about_desc3">
-                {(fields, { add, remove }) => (
+              <Form.List 
+                     rules={[
+          {
+            validator: async (_, names) => {
+              if ( names.length > 2) {
+                return Promise.reject(new Error('لا يمكن اضافة اكثر من 2 عنصر'));
+              }
+            },
+          },
+        ]}
+              
+              name="about_desc3">
+                {(fields, { add, remove },{errors}) => (
                   <Fragment>
                     {fields.map(({ key, name, ...restField }, index) => (
                       <div
@@ -245,15 +260,19 @@ const page = () => {
                       </div>
                     ))}
                     <Form.Item>
+                      <span className="mb-2 inline-block">لا يمكن اضافة اكثر من 2 عنصر</span>
                       <Button
                         size="large"
                         type="dashed"
+                          disabled={fields.length >= 2}
                         onClick={() => add()}
                         block
                         icon={<PlusOutlined />}
                       >
                         اضافة
                       </Button>
+                                    <Form.ErrorList errors={errors} />
+
                     </Form.Item>
                   </Fragment>
                 )}
